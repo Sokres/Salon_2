@@ -1,0 +1,26 @@
+{
+    "lang": "ru",
+    "dir": "ltr",
+    "name": "Курсы английского Anglofan",
+    "description": "Курсы для всех. Онлайн курсы помогут тебе освоить английский, ты всегда можешь выбирать учить неспеша на нашем S.M.A.R.T. курсе или бстро на нашем Интенсиве",
+    "short_name": "Anglofan",
+    "icons": [{
+        "src": "google-touch-icon.png",
+        "sizes": "512x512"
+    }],
+    "scope": "/",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "theme_color": "#FAFAFD",
+    "background_color": "#FAFAFD",
+    "screenshots": [{
+        "src": "screenshots/in-game-1x.jpg",
+        "sizes": "640x480",
+        "type": "image/jpeg"
+    },{
+        "src": "screenshots/in-game-2x.jpg",
+        "sizes": "1280x920",
+        "type": "image/jpeg"
+    }]
+}

@@ -1,0 +1,244 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-top: 10px;
+  background-color: var(--white);
+  z-index: 99;
+}
+.header__wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo__img {
+  width: 200px;
+}
+
+.menu {}
+
+.menu__down {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFD;
+  transition: transform .2s ease;
+}
+
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 70px;
+  padding-left: 20px;
+}
+
+.menu__item {
+  overflow: hidden;
+  position: relative;
+  margin-top: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: -20px;
+    bottom: 0;
+    background-color: #D4D4B8;
+  }
+}
+
+.menu__link {
+  display: block;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.menu__alt-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 40px;
+}
+
+.menu__alt-link {
+  position: relative;
+  // display: block;
+  width: auto;
+  margin: 40px 0;
+  color: var(--dark);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark);
+  }
+}
+.menu__alt-link:hover,
+.menu__alt-link:focus{
+  color: var(--gold2);
+}
+
+.menu__button {
+  position: relative;
+  width: 41px;
+  height: 41px;
+  background-color: var(--white);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  z-index: 99;
+
+  .menu__button--stick {
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--gold);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 30px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: var(--gold);
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+}
+
+.menu__button--stick {
+  margin: 5px 0;
+}
+
+.menu__button:active {
+  border: 1px solid var(--gold2);
+
+  .menu__button--stick {
+    background-color: var(--gold2);
+  }
+}
+
+.menu__button[aria-expanded=true] {
+  border: 1px solid var(--dark);
+  background-color:transparent;
+
+  .menu__button--stick {
+    transform: rotate(45deg);
+    background-color: var(--dark);
+
+    &::before {
+      top: 0;
+      transform: rotate(-90deg);
+      background-color: var(--dark);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      background-color: var(--dark);
+    }
+  }
+
+}
+
+.menu__down[aria-hidden=false] {
+  visibility: visible;
+  opacity: 1;
+}
+
+@include media-md {
+  .header {
+    width: auto;
+  }
+  .header__wrap{
+    max-width: 1200px;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .logo__img{
+    width: 300px;
+  }
+  .menu__button{
+    display: none;
+  }
+  .menu__down{
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent;
+  }
+  .menu__list{
+    display: flex;
+    padding: 0;
+    position: relative;
+    --line-width: 0;
+    --line-offset-x: 0;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 90%;
+      height: 3px;
+      width: var(--line-width);
+      transform: translateX(var(--line-offset-x));
+      background-color: var(--dark);
+      transition: transform 0.5s, width 0.5s;
+      border-radius: 4px;
+    }
+  }
+  .menu__item{
+    position: static;
+    margin: 0;
+  }
+  .menu__link{
+    color: var(--dark);
+    display: block;
+    padding: 10px 20px;
+  }
+  .menu__link--active{
+    color: #C18322;
+  }
+  .menu__alt-list{
+    padding: 0;
+    margin: 0;
+
+  }
+  .menu__alt-link{
+    display: block;
+    margin: 0;
+    margin: 10px 20px;
+    color: var(--gold);
+  }
+  .menu__alt-link::after{
+    background-color: var(--gold);
+  }
+}

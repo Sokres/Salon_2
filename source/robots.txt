@@ -1,0 +1,7 @@
+# GoAll 1: Scan
+User-agent: *
+Sitemap: https://anglofan.ru/sitemap.xml
+Allow: /
+Disallow: /oferta/
+Disallow: /politika/
+Disallow: /user-agre/
