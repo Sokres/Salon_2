@@ -138,44 +138,44 @@ window.addEventListener('load', function () {
 
   let price = document.querySelector('.price');
 
-  price.addEventListener('click', function(e){
+  price.addEventListener('click', function (e) {
     if (e.target.classList.contains('price__name')) {
       showPrice(e.target);
     }
   });
 
 });
-function showPrice(cost){
+function showPrice(cost) {
   let infoPrice = cost.parentNode.querySelector('.price__info');
   let heightPrice = infoPrice.scrollHeight;
-  if(infoPrice.animateFlag){
+  if (infoPrice.animateFlag) {
     return
   }
   infoPrice.animateFlag = true;
-  if(infoPrice.classList.contains('price__info--active')){
+  if (infoPrice.classList.contains('price__info--active')) {
     let animate = infoPrice.animate([
-      {  height: heightPrice + 'px'},
-      {  height: '0px'}
+      { height: heightPrice + 'px' },
+      { height: '0px' }
     ], {
       duration: 400
     });
-    animate.addEventListener('finish', function(){
+    animate.addEventListener('finish', function () {
       infoPrice.classList.remove('price__info--active');
       cost.classList.remove('price__name--active');
       infoPrice.animateFlag = false;
 
     })
   }
-  else{
+  else {
     infoPrice.classList.add('price__info--active');
     cost.classList.add('price__name--active');
     let animate = infoPrice.animate([
-      {   height: '0px'},
-      {  height: heightPrice + 'px'}
+      { height: '0px' },
+      { height: heightPrice + 'px' }
     ], {
       duration: 400
     });
-    animate.addEventListener('finish', function(){
+    animate.addEventListener('finish', function () {
       infoPrice.animateFlag = false;
     })
   }
@@ -213,3 +213,33 @@ const swiper = new Swiper(".mySwiper", {
 
 });
 
+// Подключение карты
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+ymaps.ready(init);
+function init() {
+  var myMap = new ymaps.Map("map", {
+    center: [55.38032309, 36.71389993],
+    zoom: 15,
+    size: (700, 700)
+  }),
+    myPieChart = new ymaps.Placemark([
+      55.38032309, 36.7138999
+    ], {
+          // Задаем стиль метки (метка в виде круга).
+    preset: "islands#circleDotIcon",
+    // Задаем цвет метки (в формате RGB).
+    iconColor: '#ff0000'
+    });
+  myMap.geoObjects
+    .add(new ymaps.Placemark([55.38032309, 36.7138999], {
+      balloonContent: 'Время работы: <br> ПН — ВС с 9:00 до 20:00 ',
+      iconCaption: 'Салон Нурилло',
+
+    }, {
+      preset: 'islands#greenDotIconWithCaption',
+      iconColor: '#E18700'
+    }));
+
+}
+//Библиотека Rellax
+var rellax = new Rellax('.rellax');

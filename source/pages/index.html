@@ -766,6 +766,7 @@
         </div>
       </div>
     </div>
+    <p class="price__ofer">Данные цены не являются публичной офертой. </p>
   </section>
 
   <section id="feedback" class="feedback">
@@ -840,7 +841,7 @@
           <source type="image/webp" width="390" srcset="../img/webp/sh1.webp">
           <img class="shares__image" width="390" src="../img/sh1.png" srcset="../img/sh1.png" alt="Фото отзывов">
         </picture>
-        <!-- <img src="../img/sh1.png" alt="Акция" class="shares__image"> -->
+
       </li>
       <li class="shares__items">
         <h3 class="shares__subtitle">Подарок при первом посещении</h3>
@@ -848,17 +849,53 @@
           <source type="image/webp" width="390" srcset="../img/webp/sh2.webp">
           <img class="shares__image" width="390" src="../img/sh2.png" srcset="../img/sh2.png" alt="Фото отзывов">
         </picture>
-        <!-- <img src="../img/sh2.png" alt="Акция" class="shares__image"> -->
+
       </li>
     </ul>
   </section>
+  <section id="contact" class="map-and-address">
+    <div class="map-and-address__wrap">
+      <div class="map-and-address__adress container-address">
+        <h3 class="container-address__title">Как нас найти?</h3>
+        <ul class="container-address__wrap">
+          <li class="container-address__item">
+            <img src="../img/loc.svg" alt="Местонахождение" class="container-address__image" width="40" height="40">
+            <p class="container-address__text"> <a href="https://yandex.ru/maps/?rtext=~55.38032309, 36.71389993">г. Наро-Фомнск, Маршала-Жукова,
+              д. 24а, ТЦ Терем, 3 этаж.</a></p>
+          </li>
+          <li class="container-address__item">
+            <img src="../img/time.svg" alt="Время работы" class="container-address__image" width="40" height="40">
+            <p class="container-address__text">ПН — ВС с 9:00 до 20:00</p>
+          </li>
+          <li class="container-address__item">
+            <img src="../img/phon.svg" alt="Телефон" class="container-address__image" width="40" height="40">
+            <p class="container-address__text"><a href="tel:+7 926 350 65-55">+7 926 350 65-55</a></p>
+          </li>
+          <li class="container-address__item">
+            <img src="../img/vk-1.svg" alt="В контакте" class="container-address__image" width="40" height="40">
+            <p class="container-address__text"><a href="https://vk.com/st_nurillo">https://vk.com/st_nurillo</a></p>
+          </li>
+        </ul>
+        <a href="tel:+7 926 350 65-55" class="btn-sign-us">Записаться</a>
+      </div>
+      <div id="map" class="map-and-address__map" style="width: 100%; height: 1600px" ></div>
+    </div>
+  </section>
+
+  <img class="box rellax" src="../img/but1.png" alt="Бутылка" data-rellax-desktop-speed="-8">
+  <img class="box1 rellax" src="../img/but2.png" alt="Бутылка" data-rellax-desktop-speed="-5">
+
   <button class="up up--active"></button>
   <div class="visually-hidden">
     <include src="build/img/sprite.svg"></include>
   </div>
 
   <script src="/js/swiper.js"></script>
+  <script src="/js/rellax.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+  </script>
   <script src="/js/main.js"></script>
+  </script>
 </body>
 
 </html>

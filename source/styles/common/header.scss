@@ -178,11 +178,10 @@
   }
   .header__wrap{
     max-width: 1200px;
-    width: 1200px;
     margin: 0 auto;
   }
   .logo__img{
-    width: 300px;
+    width: 150px;
   }
   .menu__button{
     display: none;
@@ -223,6 +222,7 @@
     color: var(--dark);
     display: block;
     padding: 10px 20px;
+    white-space: nowrap;
   }
   .menu__link--active{
     color: #C18322;
@@ -236,9 +236,15 @@
     display: block;
     margin: 0;
     margin: 10px 20px;
+    white-space: nowrap;
     color: var(--gold);
   }
   .menu__alt-link::after{
     background-color: var(--gold);
+  }
+}
+@include media-lg {
+  .logo__img{
+    width: 200px;
   }
 }

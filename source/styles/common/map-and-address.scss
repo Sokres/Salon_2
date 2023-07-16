@@ -1,0 +1,146 @@
+.map-and-address {
+  margin-top: 20px;
+
+}
+
+.map-and-address__map {
+  width: auto;
+  max-height: 300px;
+}
+
+.container-address {
+  position: relative;
+  margin: 0 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 5px 6px 15px 12px rgba(0, 0, 0, 0.25);
+  z-index: 9;
+}
+
+.container-address__title {
+  text-align: center;
+}
+
+.container-address__wrap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container-address__item {
+  display: flex;
+  align-items: center;
+}
+
+.container-address__image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.container-address__text a {
+  text-decoration: underline;
+  color: var(--black);
+}
+
+.btn-sign-us {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  background-color: var(--gold);
+  text-align: center;
+  color: var(--white);
+
+  &:hover,
+  &:focus {
+    background-color: var(--gold2);
+  }
+
+  &:active {
+    background-color: var(--gold3);
+  }
+}
+
+@include media-md {
+  .map-and-address {
+    margin-top: 40px;
+  }
+
+  .container-address__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@include media-lg {
+  .map-and-address{
+    margin-top: 60px;
+  }
+  .map-and-address__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .container-address {
+    width: 380px;
+    // height: 380px;
+  }
+
+  .container-address__wrap {
+    display: block;
+
+  }
+
+  .container-address__title {
+    // margin: 0;
+    margin-bottom: 20px;
+    line-height: 1;
+    // font-size: 20px;
+  }
+
+  .map-and-address__map {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    // z-index: 10 !important;
+    margin: auto;
+    min-height: 620px;
+  }
+
+  .ymaps-2-1-79-map {
+    width: 600px;
+    height: 600px !important;
+  }
+
+  .map-and-address__adress {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+    margin-left: -40px;
+  }
+
+}
+.box{
+  position: absolute;
+  width: 150px;
+  top: 600px;
+  left: 0px;
+  display: none;
+}
+.box1{
+  position: absolute;
+  top: 800px;
+  right: 0px;
+  width: 150px;
+display: none;
+}
+@include media-lg {
+  .box{
+    display: block;
+  }
+  .box1{
+  display: block;
+  }
+}
